@@ -68,7 +68,7 @@ Optional for performance:
 ## Database & Migrations (Cloud-friendly)
 
 - Migrations have already been applied **once**, you do **not** need to run them again. Neon 
-PostgreSQL DB used.
+PostgreSQL DB used. You don't need to run this script.
 
 Commands (only when needed to add migrations):
 
