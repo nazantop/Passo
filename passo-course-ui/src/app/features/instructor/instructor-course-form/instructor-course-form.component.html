@@ -1,0 +1,77 @@
+<mat-card class="card">
+  <h2>{{ isEdit ? 'Edit' : 'New' }} Course</h2>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" rows="4" required></textarea>
+    </mat-form-field>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="half">
+        <mat-label>Duration (hours)</mat-label>
+        <input matInput type="number" formControlName="duration" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half">
+        <mat-label>Difficulty</mat-label>
+        <mat-select formControlName="difficulty" required>
+          <mat-option [value]="0">Beginner</mat-option>
+          <mat-option [value]="1">Intermediate</mat-option>
+          <mat-option [value]="2">Advanced</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row counters">
+      <div class="half lessons-counter">Total Lessons: {{ lessonsArray.length }}</div>
+      <div class="half quizzes-counter">Total Quizzes: {{ quizzesArray.length }}</div>
+    </div>
+
+    <div formArrayName="lessons" class="lessons-block">
+      <div class="lessons-head">
+        <h3>Lessons</h3>
+        <button mat-stroked-button color="primary" type="button" (click)="addLesson()">Add Lesson</button>
+      </div>
+      <div class="lesson-row" *ngFor="let _ of lessonsArray.controls; let i = index" [formGroupName]="i">
+        <span class="badge">{{ i + 1 }}</span>
+        <mat-form-field appearance="outline" class="flex1">
+          <mat-label>Lesson title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+        <input type="hidden" formControlName="order" />
+        <button mat-icon-button color="warn" type="button" (click)="removeLesson(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div formArrayName="quizzes" class="quizzes-block">
+      <div class="quizzes-head">
+        <h3>Quizzes</h3>
+        <button mat-stroked-button color="primary" type="button" (click)="addQuiz()">Add Quiz</button>
+      </div>
+      <div class="quiz-row" *ngFor="let _ of quizzesArray.controls; let i = index" [formGroupName]="i">
+        <span class="badge">{{ i + 1 }}</span>
+        <mat-form-field appearance="outline" class="flex1">
+          <mat-label>Quiz title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+        <input type="hidden" formControlName="order" />
+        <button mat-icon-button color="warn" type="button" (click)="removeQuiz(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button mat-stroked-button routerLink="/instructor/courses">Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="form.invalid || loading">Save</button>
+    </div>
+  </form>
+</mat-card>

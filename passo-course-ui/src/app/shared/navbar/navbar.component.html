@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-button [routerLink]="['/']" class="brand">PassoCourseApp</button>
+  <button mat-button [routerLink]="['/courses']">Courses</button>
+  <button mat-button *ngIf="auth.hasRole('User')" [routerLink]="['/dashboard']">
+    My Learning
+  </button>
+  <button mat-button *ngIf="auth.hasRole('Instructor')" [routerLink]="['/instructor/courses']">
+    Instructor
+  </button>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="!auth.isLoggedIn(); else logged">
+    <button mat-stroked-button color="accent" [routerLink]="['/login']">
+      Login
+    </button>
+    <button mat-stroked-button color="accent" [routerLink]="['/register']">
+      Register
+    </button>
+  </ng-container>
+  <ng-template #logged>
+    <button mat-stroked-button color="warn" (click)="logout()">Logout</button>
+  </ng-template>
+</mat-toolbar>

@@ -1,0 +1,44 @@
+<h2 class="page-title">My Learning</h2>
+
+<ng-container *ngIf="courses?.length; else emptyState">
+  <div class="grid">
+    <mat-card class="enroll-card" *ngFor="let c of courses">
+      <div class="head">
+        <div class="title">{{ c.title }}</div>
+        <div class="teacher">
+          <mat-icon>person</mat-icon>
+          <span>{{ c.instructorFullName || c.instructorEmail }}</span>
+        </div>
+      </div>
+
+      <div class="meta">
+        <mat-chip-set>
+          <mat-chip><mat-icon>bar_chart</mat-icon>{{ c.difficulty }}</mat-chip>
+          <mat-chip><mat-icon>schedule</mat-icon>{{ c.duration }}h</mat-chip>
+          <mat-chip><mat-icon>percent</mat-icon>{{ progressBy(c.id) }}%</mat-chip>
+        </mat-chip-set>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="progress">
+        <mat-progress-bar mode="determinate" [value]="progressBy(c.id)"></mat-progress-bar>
+      </div>
+
+      <div class="actions">
+        <a mat-stroked-button color="primary" [routerLink]="['/courses', c.id]">Open</a>
+        <span class="spacer"></span>
+        <button mat-stroked-button color="warn" (click)="unenroll(c.id)">Unenroll</button>
+      </div>
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-template #emptyState>
+  <mat-card class="empty">
+    <mat-icon>menu_book</mat-icon>
+    <h3>No enrollments yet</h3>
+    <p>Browse courses and start learning.</p>
+    <a mat-flat-button color="primary" routerLink="/courses">Browse Courses</a>
+  </mat-card>
+</ng-template>

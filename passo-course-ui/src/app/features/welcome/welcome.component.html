@@ -1,0 +1,82 @@
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1>Learn & Teach</h1>
+      <p class="tagline">Join courses as a student or create your own as an instructor.</p>
+      <div class="cta">
+        <ng-container *ngIf="!authService.isLoggedIn(); else loggedCtas">
+          <a mat-flat-button color="primary" routerLink="/courses">
+            <mat-icon>school</mat-icon>
+            Browse Courses
+          </a>
+          <a mat-stroked-button routerLink="/login">
+            <mat-icon>login</mat-icon>
+            Sign in
+          </a>
+          <a mat-stroked-button routerLink="/register">
+            <mat-icon>workspace_premium</mat-icon>
+            Become an Instructor
+          </a>
+        </ng-container>
+
+        <ng-template #loggedCtas>
+          <a mat-flat-button color="primary" routerLink="/courses">
+            <mat-icon>school</mat-icon>
+            Browse Courses
+          </a>
+          <a mat-stroked-button *ngIf="authService.hasRole('User')" routerLink="/dashboard">
+            <mat-icon>menu_book</mat-icon>
+            My Learning
+          </a>
+          <a mat-stroked-button *ngIf="authService.hasRole('Instructor')" routerLink="/instructor/courses">
+            <mat-icon>dashboard</mat-icon>
+            Instructor
+          </a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="step">
+    <div class="dot">01</div>
+    <div class="text">Create account</div>
+  </div>
+  <mat-divider class="sep" vertical></mat-divider>
+  <div class="step">
+    <div class="dot">02</div>
+    <div class="text">Explore courses / Create yours</div>
+  </div>
+  <mat-divider class="sep" vertical></mat-divider>
+  <div class="step">
+    <div class="dot">03</div>
+    <div class="text">Track progress</div>
+  </div>
+</section>
+
+<section class="audiences">
+  <mat-card class="aud-card">
+    <div class="aud-head">
+      <mat-icon>school</mat-icon>
+      <h3>For Students</h3>
+    </div>
+    <ul class="checks">
+      <li><mat-icon>check_circle</mat-icon>Enroll in minutes</li>
+      <li><mat-icon>check_circle</mat-icon>Clear course overviews</li>
+      <li><mat-icon>check_circle</mat-icon>Progress tracking</li>
+    </ul>
+  </mat-card>
+
+  <mat-card class="aud-card">
+    <div class="aud-head">
+      <mat-icon>workspace_premium</mat-icon>
+      <h3>For Instructors</h3>
+    </div>
+    <ul class="checks">
+      <li><mat-icon>check_circle</mat-icon>Create & manage courses</li>
+      <li><mat-icon>check_circle</mat-icon>Own your content</li>
+      <li><mat-icon>check_circle</mat-icon>Simple dashboard</li>
+    </ul>
+  </mat-card>
+</section>

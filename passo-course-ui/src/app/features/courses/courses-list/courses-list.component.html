@@ -1,0 +1,49 @@
+<div class="toolbar">
+  <h2 class="page-title">Courses</h2>
+  <mat-form-field appearance="outline" class="search">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Title, description or instructor" (keyup)="onSearch($event)" [value]="filter">
+    <button mat-icon-button matSuffix (click)="clear()" *ngIf="filter">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="grid" *ngIf="paged.length; else empty">
+  <mat-card class="course" *ngFor="let c of paged">
+    <div class="course__head">
+      <h3 class="course__title">{{ c.title }}</h3>
+      <span class="course__instructor">Instructor: {{ c.instructorFullName || c.instructorEmail }}</span>
+    </div>
+
+    <p class="course__desc">{{ c.description }}</p>
+
+    <mat-chip-set class="chips">
+      <mat-chip><mat-icon>bar_chart</mat-icon>{{ c.difficulty }}</mat-chip>
+      <mat-chip><mat-icon>schedule</mat-icon>{{ c.duration }}h</mat-chip>
+      <mat-chip><mat-icon>menu_book</mat-icon>{{ c.totalLessons || 0 }} lessons</mat-chip>
+      <mat-chip><mat-icon>quiz</mat-icon>{{ c.totalQuizzes || 0 }} quizzes</mat-chip>
+    </mat-chip-set>
+
+    <div class="course__actions">
+      <a mat-stroked-button color="primary" [routerLink]="['/courses', c.id]">Details</a>
+    </div>
+  </mat-card>
+</div>
+
+<ng-template #empty>
+  <div class="empty">
+    <mat-icon>menu_book</mat-icon>
+    <h3>No courses found</h3>
+    <p class="muted">Try a different search keyword.</p>
+  </div>
+</ng-template>
+
+<mat-paginator
+  [length]="filtered.length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[6,9,12,24]"
+  showFirstLastButtons
+  (page)="onPage($event)">
+</mat-paginator>

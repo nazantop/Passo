@@ -1,0 +1,116 @@
+.detail-card {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 20px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title-wrap {
+  display: grid;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
+.status {
+  background: #f0e8ff;
+  color: #5b2ee5;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.desc {
+  margin: 14px 0 8px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.progress-wrap {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 18px;
+}
+
+.percent {
+  font-weight: 700;
+  font-size: 14px;
+  color: #5b2ee5;
+}
+
+.progress-wrap mat-progress-bar {
+  height: 10px;
+  border-radius: 8px;
+  --mdc-linear-progress-active-indicator-height: 10px;
+  --mdc-linear-progress-track-height: 10px;
+}
+
+.section {
+  margin-top: 12px;
+}
+
+.section h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  background: #faf8ff;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text {
+  font-weight: 600;
+}
+
+mat-icon {
+  color: #b8b2ff;
+}
+
+mat-icon.done {
+  color: #5b2ee5;
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}

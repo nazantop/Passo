@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "W0DsLuwn9OylOGEoIZX93+1qU18Y43w7U2JcpvbuJGg=",
+  "Source": "PassoCourseApp.Api",
+  "BasePath": "_content/PassoCourseApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

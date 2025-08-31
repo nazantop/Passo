@@ -1,0 +1,61 @@
+<mat-card class="detail-card" *ngIf="course as o">
+  <div class="header">
+    <div class="title-wrap">
+      <h1 class="title">{{ o.title }}</h1>
+      <div class="sub" >{{ o.instructorFullName || o.instructorEmail }}</div>
+    </div>
+    <div *ngIf="authService.hasRole('User')">
+        <span class="status" *ngIf="isCompleted()">Completed</span>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <p class="desc">{{ o.description }}</p>
+
+  <div class="progress-wrap" *ngIf="authService.hasRole('User')">
+    <div class="percent">{{ o.percent }}%</div>
+    <mat-progress-bar mode="determinate" [value]="o.percent"></mat-progress-bar>
+  </div>
+
+  <div class="section" >
+    <h3>Lessons</h3>
+    <div class="list" >
+      <div class="row" *ngFor="let l of o.lessons">
+        <div class="left">
+          <mat-icon [class.done]="completedLessons.has(l.id)">{{ completedLessons.has(l.id) ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+          <span class="text">{{ l.order }}. {{ l.title }}</span>
+        </div>
+        <button mat-stroked-button color="primary"
+                (click)="completeLesson(l.id)"
+                [hidden]="!authService.hasRole('User')"
+                [disabled]="completedLessons.has(l.id)">
+          {{ completedLessons.has(l.id) ? 'Completed' : 'Complete' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" *ngIf="o.totalQuizzes > 0">
+    <h3>Quizzes</h3>
+    <div class="list">
+      <div class="row" *ngFor="let _ of [].constructor(o.totalQuizzes); let i = index">
+        <div class="left">
+          <mat-icon [class.done]="completedQuizzes.has(i+1)">{{ completedQuizzes.has(i+1) ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+          <span class="text">Quiz {{ i+1 }}</span>
+        </div>
+        <button mat-stroked-button color="primary"
+                (click)="completeQuiz(i+1)"
+                [hidden]="!authService.hasRole('User')"
+                [disabled]="completedQuizzes.has(i+1)">
+          {{ completedQuizzes.has(i+1) ? 'Completed' : 'Complete' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-flat-button color="primary" (click)="doEnroll()" *ngIf="authService.hasRole('User') && !enrolled">Enroll</button>
+    <button mat-stroked-button color="warn" (click)="doUnenroll()" *ngIf="authService.hasRole('User') && enrolled">Unenroll</button>
+    <a mat-stroked-button href="javascript:history.back()">Back</a>
+  </div>
+</mat-card>

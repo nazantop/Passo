@@ -1,0 +1,224 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Infrastructure/PassoCourseApp.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/PassoCourseApp.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/PassoCourseApp.Application.csproj",
+        "projectName": "PassoCourseApp.Application",
+        "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/PassoCourseApp.Application.csproj",
+        "packagesPath": "/Users/nazantop/.nuget/packages/",
+        "outputPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nazantop/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj": {
+                "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj",
+        "projectName": "PassoCourseApp.Domain",
+        "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj",
+        "packagesPath": "/Users/nazantop/.nuget/packages/",
+        "outputPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nazantop/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Infrastructure/PassoCourseApp.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Infrastructure/PassoCourseApp.Infrastructure.csproj",
+        "projectName": "PassoCourseApp.Infrastructure",
+        "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Infrastructure/PassoCourseApp.Infrastructure.csproj",
+        "packagesPath": "/Users/nazantop/.nuget/packages/",
+        "outputPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nazantop/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/PassoCourseApp.Application.csproj": {
+                "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Application/PassoCourseApp.Application.csproj"
+              },
+              "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj": {
+                "projectPath": "/Users/nazantop/Desktop/Passo/passo-course-be/src/PassoCourseApp.Domain/PassoCourseApp.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.14.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

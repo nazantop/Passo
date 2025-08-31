@@ -1,0 +1,14 @@
+.center{
+    display:grid;
+    place-items:center;
+    height:70vh
+}
+
+.card{
+    width:min(420px,92vw); 
+    padding: 10px;
+}
+
+.full{
+    width:100%
+}

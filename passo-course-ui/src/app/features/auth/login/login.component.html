@@ -1,0 +1,16 @@
+<div class="center">
+    <mat-card class="card">
+    <h2>Login</h2>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" class="full"><mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required>
+        </mat-form-field>
+            <button mat-flat-button color="primary" class="full" [disabled]="form.invalid || loading">Login</button>
+        </form>
+    <button mat-button routerLink="/register">Create an account</button>
+    </mat-card>
+</div>

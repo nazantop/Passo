@@ -1,0 +1,57 @@
+.card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.full {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.half {
+  flex: 1 1 260px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.lessons-block,
+.quizzes-block {
+  margin-top: 20px;
+}
+
+.lessons-head,
+.quizzes-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.lesson-row,
+.quiz-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+}
+
+.flex1 {
+  flex: 1;
+}

@@ -1,0 +1,78 @@
+.page {
+  max-width: 1150px;
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+h2 { margin: 0; font-size: 22px; font-weight: 800; }
+.muted { color: #7a7a85; font-size: 13px; }
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search { width: 280px; }
+
+.table-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th.mat-mdc-header-cell {
+  font-weight: 700;
+  color: #3b3b45;
+  background: #f6f1ff;
+}
+
+tr.data-row:nth-child(even) {
+  background: rgba(124,58,237,0.03);
+}
+
+.title-cell .t { font-weight: 700; }
+.title-cell .sub {
+  max-width: 580px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.no-data td {
+  text-align: center;
+  padding: 18px;
+  color: #7a7a85;
+}
+
+mat-chip-set { gap: 6px; }
+mat-chip mat-icon { margin-right: 4px; }
+
+@media (max-width: 900px) {
+  .search { width: 200px; }
+  .title-cell .sub { display: none; }
+  .page { padding: 8px; }
+}
